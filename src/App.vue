@@ -1,0 +1,35 @@
+<template>
+  <NavBar/>
+
+  <div class="container is-max-desktop px-2 py-4">
+    <RouterView/>
+  </div>
+</template>
+
+<script setup>
+/* 
+  imports
+*/
+
+import { onMounted } from 'vue';
+import { useStoreAuth } from '@/stores/storeAuth'
+import NavBar from '@/components/Layout/NavBar.vue'
+
+/* 
+  store
+*/
+
+  const storeAuth = useStoreAuth()
+
+/* 
+  init store
+*/
+
+storeAuth.init()
+
+</script>
+
+<style>
+  @import 'bulma/css/bulma.css';
+</style>
+
